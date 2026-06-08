@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Abhishek Tiwari — Associate Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy-900:#050d1a;
+  --navy-800:#071022;
+  --navy-700:#0c1930;
+  --navy-600:#102040;
+  --navy-500:#1a3055;
+  --navy-400:#243d6a;
+  --blue-accent:#1e5fd4;
+  --blue-light:#3b82f6;
+  --blue-glow:#60a5fa;
+  --white:#ffffff;
+  --gray-50:#f8fafc;
+  --gray-100:#e8edf5;
+  --gray-200:#c8d4e8;
+  --gray-400:#7a90b0;
+  --gray-500:#5a718a;
+  --border:#1c2e48;
+  --border-light:#243a5a;
+  --font:'Plus Jakarta Sans',sans-serif;
+  --font-display:'Playfair Display',serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--navy-900);color:var(--white);font-family:var(--font);font-size:15px;line-height:1.6;overflow-x:hidden;}
+
+/* ═══════════════════════════════════════
+   HEADER / NAV
+═══════════════════════════════════════ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(5,13,26,0.96);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  height:64px;
+  display:flex;align-items:center;
+}
+.header-inner{
+  width:100%;max-width:1280px;margin:0 auto;
+  padding:0 40px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  display:flex;align-items:center;gap:12px;text-decoration:none;
+}
+.logo-mark{
+  width:36px;height:36px;
+  background:var(--blue-accent);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:14px;color:#fff;
+  letter-spacing:-0.02em;
+  flex-shrink:0;
+}
+.logo-text{
+  display:flex;flex-direction:column;line-height:1.1;
+}
+.logo-name{
+  font-size:13px;font-weight:700;color:var(--white);letter-spacing:0.01em;
+}
+.logo-role{
+  font-size:10px;font-weight:400;color:var(--gray-400);letter-spacing:0.04em;text-transform:uppercase;
+}
+nav{display:flex;align-items:center;gap:2px;}
+nav a{
+  padding:7px 14px;
+  font-size:13px;font-weight:500;
+  color:var(--gray-200);
+  text-decoration:none;
+  border-radius:6px;
+  transition:background 0.18s,color 0.18s;
+  letter-spacing:0.01em;
+}
+nav a:hover{background:var(--navy-600);color:var(--white);}
+nav a.active{background:var(--navy-600);color:var(--white);}
+.header-cta{
+  background:var(--blue-accent);
+  color:#fff !important;
+  padding:8px 20px !important;
+  border-radius:6px !important;
+  font-weight:600 !important;
+  transition:background 0.18s,transform 0.18s !important;
+}
+.header-cta:hover{background:#1a52c0 !important;transform:translateY(-1px);}
+
+/* ═══════════════════════════════════════
+   BANNER / HERO CAROUSEL
+═══════════════════════════════════════ */
+.banner-section{
+  margin-top:64px;
+  position:relative;
+  overflow:hidden;
+  height:540px;
+}
+.banner-track{
+  display:flex;
+  width:300%;
+  height:100%;
+  transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.banner-slide{
+  width:33.333%;
+  height:100%;
+  position:relative;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+/* Slide backgrounds */
+.banner-slide:nth-child(1){background:linear-gradient(135deg,#050d1a 0%,#0c1d3a 40%,#0f2a55 100%);}
+.banner-slide:nth-child(2){background:linear-gradient(135deg,#040e1f 0%,#071830 40%,#0a2040 100%);}
+.banner-slide:nth-child(3){background:linear-gradient(135deg,#050d1a 0%,#0d1e38 40%,#102540 100%);}
+
+.slide-bg-pattern{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle at 80% 50%,rgba(30,95,212,0.18) 0%,transparent 60%),
+                   radial-gradient(circle at 20% 80%,rgba(59,130,246,0.08) 0%,transparent 40%);
+}
+.slide-grid-lines{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.slide-content{
+  position:relative;z-index:2;
+  max-width:1280px;margin:0 auto;
+  padding:0 40px;
+  width:100%;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
+}
+.slide-left{}
+.slide-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(30,95,212,0.15);
+  border:1px solid rgba(30,95,212,0.35);
+  border-radius:100px;
+  padding:5px 14px;
+  font-size:11px;font-weight:600;
+  color:#93c5fd;
+  letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.slide-tag .dot{width:6px;height:6px;border-radius:50%;background:#3b82f6;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.slide-headline{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,3.5vw,3.2rem);
+  font-weight:700;
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  margin-bottom:16px;
+  color:var(--white);
+}
+.slide-headline em{font-style:normal;color:#60a5fa;}
+.slide-sub{
+  font-size:15px;font-weight:400;
+  color:var(--gray-200);
+  line-height:1.7;
+  max-width:440px;
+  margin-bottom:32px;
+  opacity:0.8;
+}
+.slide-actions{display:flex;gap:12px;align-items:center;}
+.btn-primary{
+  background:var(--blue-accent);
+  color:#fff;padding:11px 26px;
+  border-radius:7px;font-size:13px;font-weight:600;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background 0.18s,transform 0.18s,box-shadow 0.18s;
+  letter-spacing:0.01em;
+}
+.btn-primary:hover{background:#1a52c0;transform:translateY(-1px);box-shadow:0 6px 20px rgba(30,95,212,0.35);}
+.btn-outline{
+  border:1px solid var(--border-light);
+  color:var(--gray-200);padding:11px 26px;
+  border-radius:7px;font-size:13px;font-weight:500;
+  text-decoration:none;
+  transition:border-color 0.18s,color 0.18s,background 0.18s;
+  letter-spacing:0.01em;
+}
+.btn-outline:hover{border-color:var(--blue-light);color:var(--white);background:rgba(30,95,212,0.08);}
+
+.slide-right{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+}
+.metric-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  padding:20px 22px;
+  transition:background 0.2s;
+}
+.metric-card:hover{background:rgba(255,255,255,0.07);}
+.metric-val{
+  font-family:var(--font-display);
+  font-size:2rem;font-weight:700;
+  color:var(--white);line-height:1;
+  margin-bottom:4px;
+}
+.metric-val span{color:#60a5fa;}
+.metric-label{font-size:11px;font-weight:500;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em;}
+.metric-sub{font-size:12px;color:var(--gray-500);margin-top:2px;}
+
+/* Slide 2 — about / story */
+.slide-story-blocks{display:flex;flex-direction:column;gap:14px;}
+.story-block{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  padding:16px 20px;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.story-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px;}
+.story-text h4{font-size:13px;font-weight:600;color:var(--white);margin-bottom:3px;}
+.story-text p{font-size:12px;color:var(--gray-400);line-height:1.55;}
+
+/* Slide 3 — skills */
+.skills-visual{display:flex;flex-direction:column;gap:12px;}
+.skill-bar-item{}
+.skill-bar-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.skill-bar-name{font-size:12px;font-weight:500;color:var(--gray-200);}
+.skill-bar-pct{font-size:11px;font-weight:600;color:#60a5fa;}
+.skill-bar-track{height:5px;background:rgba(255,255,255,0.07);border-radius:10px;overflow:hidden;}
+.skill-bar-fill{height:100%;border-radius:10px;background:linear-gradient(90deg,#1e5fd4,#60a5fa);}
+
+/* Banner Controls */
+.banner-controls{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:10px;z-index:10;
+}
+.banner-dot{
+  width:24px;height:4px;border-radius:2px;
+  background:rgba(255,255,255,0.2);
+  cursor:pointer;transition:background 0.25s,width 0.25s;
+  border:none;
+}
+.banner-dot.active{background:var(--blue-light);width:36px;}
+.banner-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:40px;height:40px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:10;
+  transition:background 0.2s;color:var(--white);font-size:16px;
+}
+.banner-arrow:hover{background:rgba(30,95,212,0.4);}
+.banner-arrow.prev{left:24px;}
+.banner-arrow.next{right:24px;}
+
+/* ═══════════════════════════════════════
+   MAIN LAYOUT
+═══════════════════════════════════════ */
+.container{max-width:1280px;margin:0 auto;padding:0 40px;}
+.page-section{padding:80px 0;}
+.page-section:nth-child(even){background:var(--navy-800);}
+
+.section-title-block{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:48px;
+}
+.section-eyebrow{
+  font-size:11px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--blue-light);
+}
+.section-h2{
+  font-size:clamp(1.6rem,2.5vw,2.2rem);
+  font-weight:800;color:var(--white);
+  letter-spacing:-0.02em;line-height:1.1;
+}
+.section-divider{flex:1;height:1px;background:var(--border);}
+
+/* ═══════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════ */
+.stats-bar{
+  background:var(--navy-700);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:28px 0;
+}
+.stats-bar .container{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.stat-col{
+  padding:0 36px;
+  border-right:1px solid var(--border);
+  display:flex;flex-direction:column;
+}
+.stat-col:first-child{padding-left:0;}
+.stat-col:last-child{border-right:none;}
+.stat-num{
+  font-family:var(--font-display);
+  font-size:2.2rem;font-weight:700;
+  color:var(--white);line-height:1;margin-bottom:4px;
+}
+.stat-num .accent{color:#60a5fa;}
+.stat-desc{font-size:12px;font-weight:500;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em;}
+.stat-detail{font-size:12px;color:var(--gray-500);margin-top:2px;}
+
+/* ═══════════════════════════════════════
+   EXPERIENCE TIMELINE
+═══════════════════════════════════════ */
+.timeline{display:flex;flex-direction:column;gap:0;}
+.timeline-item{
+  display:grid;grid-template-columns:200px 1px 1fr;
+  gap:0 32px;
+  padding:36px 0;
+  border-bottom:1px solid var(--border);
+}
+.timeline-item:first-child{border-top:1px solid var(--border);}
+.tl-meta{padding-right:20px;}
+.tl-period{
+  font-size:11px;font-weight:700;
+  color:var(--blue-light);
+  letter-spacing:0.07em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.tl-company{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.tl-location{font-size:12px;color:var(--gray-500);}
+.tl-divider-col{
+  background:var(--border);
+  position:relative;
+  width:1px;
+}
+.tl-divider-col::before{
+  content:'';
+  position:absolute;top:6px;left:50%;transform:translateX(-50%);
+  width:9px;height:9px;border-radius:50%;
+  background:var(--blue-accent);
+  border:2px solid var(--navy-800);
+}
+.tl-body{padding-left:20px;}
+.tl-role{
+  font-size:1.1rem;font-weight:700;color:var(--white);
+  margin-bottom:14px;letter-spacing:-0.01em;
+}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.tl-bullets li{
+  font-size:13px;color:rgba(200,212,232,0.75);
+  line-height:1.65;padding-left:18px;position:relative;
+}
+.tl-bullets li::before{
+  content:'';
+  position:absolute;left:0;top:8px;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--blue-accent);
+  flex-shrink:0;
+}
+.tl-badges{display:flex;flex-wrap:wrap;gap:7px;}
+.badge{
+  background:rgba(30,95,212,0.12);
+  border:1px solid rgba(30,95,212,0.25);
+  border-radius:4px;padding:4px 10px;
+  font-size:11px;font-weight:600;color:#93c5fd;
+  letter-spacing:0.02em;
+}
+
+/* ═══════════════════════════════════════
+   PROJECTS — ALTERNATING CARDS
+═══════════════════════════════════════ */
+.projects-grid{display:flex;flex-direction:column;gap:0;}
+.project-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:24px;
+  transition:border-color 0.25s,box-shadow 0.25s;
+  background:var(--navy-800);
+}
+.project-row:hover{border-color:var(--blue-accent);box-shadow:0 4px 32px rgba(30,95,212,0.12);}
+.project-row.reverse .project-body{order:-1;}
+
+.project-visual{
+  background:var(--navy-700);
+  min-height:280px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  border-right:1px solid var(--border);
+}
+.project-row.reverse .project-visual{border-right:none;border-left:1px solid var(--border);}
+
+.pv-bg-1{background:linear-gradient(135deg,#071626 0%,#0c2040 100%);}
+.pv-bg-2{background:linear-gradient(135deg,#060f20 0%,#0a1a38 100%);}
+.pv-bg-3{background:linear-gradient(135deg,#05101e 0%,#0d1e35 100%);}
+.pv-bg-4{background:linear-gradient(135deg,#060d1c 0%,#0c1a30 100%);}
+
+.pv-content{
+  text-align:center;padding:40px;position:relative;z-index:1;
+}
+.pv-icon{
+  font-size:3rem;margin-bottom:16px;display:block;
+  filter:drop-shadow(0 0 30px rgba(96,165,250,0.3));
+}
+.pv-label{
+  font-size:11px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:#60a5fa;
+  background:rgba(30,95,212,0.15);
+  border:1px solid rgba(30,95,212,0.25);
+  border-radius:100px;padding:4px 14px;
+  display:inline-block;
+}
+
+.project-body{padding:36px 40px;display:flex;flex-direction:column;justify-content:center;}
+.proj-category{
+  font-size:11px;font-weight:700;
+  color:var(--blue-light);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:10px;
+}
+.proj-title{
+  font-size:1.35rem;font-weight:800;
+  color:var(--white);letter-spacing:-0.02em;
+  line-height:1.2;margin-bottom:12px;
+}
+.proj-desc{
+  font-size:13px;color:rgba(200,212,232,0.7);
+  line-height:1.7;margin-bottom:20px;
+}
+.proj-metrics{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px;}
+.proj-metric{
+  background:var(--navy-700);
+  border:1px solid var(--border);
+  border-radius:6px;padding:8px 14px;
+  display:flex;flex-direction:column;
+}
+.proj-metric-val{
+  font-size:1.1rem;font-weight:800;color:var(--white);
+  font-family:var(--font-display);line-height:1;
+}
+.proj-metric-val .up{color:#34d399;}
+.proj-metric-label{font-size:10px;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.05em;margin-top:2px;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.proj-tag{
+  font-size:11px;color:var(--gray-500);
+  background:var(--navy-900);
+  border:1px solid var(--border);
+  border-radius:4px;padding:3px 9px;
+}
+.proj-link{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:12px;font-weight:600;color:var(--blue-light);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  padding-bottom:2px;
+  transition:border-color 0.2s,gap 0.2s;
+  width:fit-content;
+}
+.proj-link:hover{border-color:var(--blue-light);gap:10px;}
+.proj-link.muted{color:var(--gray-500);}
+.proj-link.muted:hover{border-color:transparent;gap:7px;}
+
+/* ═══════════════════════════════════════
+   SKILLS SECTION
+═══════════════════════════════════════ */
+.skills-section{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.skill-group-card{
+  background:var(--navy-700);
+  border:1px solid var(--border);
+  border-radius:10px;padding:28px;
+  transition:border-color 0.2s;
+}
+.skill-group-card:hover{border-color:var(--border-light);}
+.sg-label{
+  font-size:10px;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--blue-light);margin-bottom:16px;
+}
+.sg-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.sg-tag{
+  background:var(--navy-900);
+  border:1px solid var(--border);
+  border-radius:5px;padding:5px 11px;
+  font-size:12px;font-weight:500;color:var(--gray-200);
+  transition:border-color 0.2s,color 0.2s;
+}
+.sg-tag:hover{border-color:var(--blue-light);color:var(--white);}
+
+/* ═══════════════════════════════════════
+   EDUCATION & AWARDS
+═══════════════════════════════════════ */
+.edu-awards-grid{
+  display:grid;grid-template-columns:1.2fr 1fr;
+  gap:24px;align-items:start;
+}
+.edu-card{
+  background:var(--navy-700);
+  border:1px solid var(--border);
+  border-radius:12px;padding:36px;
+}
+.edu-badge-row{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.edu-icon-box{
+  width:44px;height:44px;
+  background:rgba(30,95,212,0.15);
+  border:1px solid rgba(30,95,212,0.3);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;
+}
+.edu-type{font-size:11px;font-weight:700;color:var(--blue-light);letter-spacing:0.08em;text-transform:uppercase;}
+.edu-degree{
+  font-size:1.3rem;font-weight:800;color:var(--white);
+  letter-spacing:-0.02em;line-height:1.2;margin-bottom:6px;
+}
+.edu-uni{font-size:14px;color:var(--gray-400);margin-bottom:20px;}
+.edu-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.edu-stat-cell{
+  background:var(--navy-900);
+  border:1px solid var(--border);
+  border-radius:7px;padding:12px 16px;
+}
+.edu-stat-val{font-size:1.2rem;font-weight:800;color:var(--white);line-height:1;margin-bottom:3px;}
+.edu-stat-val .accent{color:#60a5fa;}
+.edu-stat-key{font-size:10px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.06em;}
+
+.awards-stack{display:flex;flex-direction:column;gap:14px;}
+.award-row{
+  background:var(--navy-700);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:20px 22px;
+  display:flex;align-items:flex-start;gap:16px;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.award-row:hover{border-color:var(--blue-accent);transform:translateX(4px);}
+.award-icon-box{
+  width:38px;height:38px;flex-shrink:0;
+  background:rgba(30,95,212,0.1);
+  border:1px solid rgba(30,95,212,0.2);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+}
+.award-info{}
+.award-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;}
+.award-org{font-size:11px;font-weight:600;color:var(--blue-light);letter-spacing:0.04em;margin-bottom:4px;}
+.award-desc{font-size:12px;color:var(--gray-500);line-height:1.5;}
+
+/* ═══════════════════════════════════════
+   CONNECT
+═══════════════════════════════════════ */
+#connect{background:var(--navy-800);}
+.connect-grid{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start;
+}
+.connect-left{}
+.connect-headline{
+  font-family:var(--font-display);
+  font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;
+  color:var(--white);line-height:1.15;
+  letter-spacing:-0.02em;margin-bottom:14px;
+}
+.connect-headline span{color:#60a5fa;}
+.connect-sub{
+  font-size:14px;color:var(--gray-400);
+  line-height:1.75;margin-bottom:36px;max-width:380px;
+}
+.social-rows{display:flex;flex-direction:column;gap:10px;}
+.social-row{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 18px;
+  background:var(--navy-700);
+  border:1px solid var(--border);
+  border-radius:8px;text-decoration:none;
+  transition:border-color 0.2s,background 0.2s,transform 0.2s;
+}
+.social-row:hover{border-color:var(--blue-accent);background:var(--navy-600);transform:translateX(5px);}
+.social-row-icon{
+  width:34px;height:34px;
+  background:rgba(30,95,212,0.15);
+  border:1px solid rgba(30,95,212,0.2);
+  border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;flex-shrink:0;
+}
+.social-row-text{flex:1;}
+.social-row-name{font-size:13px;font-weight:600;color:var(--white);display:block;}
+.social-row-val{font-size:12px;color:var(--gray-400);}
+.social-row-arr{color:var(--gray-500);font-size:14px;transition:color 0.2s,transform 0.2s;}
+.social-row:hover .social-row-arr{color:var(--blue-light);transform:translateX(3px);}
+
+.contact-form-wrap{}
+.form-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:24px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-field{display:flex;flex-direction:column;gap:7px;}
+.form-field.full{grid-column:1/-1;}
+.form-label{font-size:11px;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;}
+.form-input{
+  background:var(--navy-700);
+  border:1px solid var(--border);
+  border-radius:7px;padding:11px 15px;
+  font-family:var(--font);font-size:13px;
+  color:var(--white);outline:none;
+  transition:border-color 0.2s;
+}
+.form-input::placeholder{color:var(--gray-500);}
+.form-input:focus{border-color:var(--blue-accent);}
+textarea.form-input{resize:vertical;min-height:110px;}
+.submit-btn{
+  grid-column:1/-1;
+  background:var(--blue-accent);
+  border:none;color:#fff;
+  padding:12px 28px;
+  border-radius:7px;font-family:var(--font);
+  font-size:13px;font-weight:700;
+  cursor:pointer;
+  transition:background 0.18s,transform 0.18s,box-shadow 0.18s;
+  width:fit-content;letter-spacing:0.02em;
+}
+.submit-btn:hover{background:#1a52c0;transform:translateY(-1px);box-shadow:0 6px 20px rgba(30,95,212,0.35);}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{
+  background:var(--navy-900);
+  border-top:1px solid var(--border);
+  padding:28px 0;
+}
+footer .container{
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-l{font-size:13px;font-weight:600;color:var(--white);}
+.footer-l span{color:var(--gray-500);font-weight:400;}
+.footer-r{font-size:12px;color:var(--gray-500);}
+.footer-r a{color:var(--blue-light);text-decoration:none;}
+.footer-r a:hover{text-decoration:underline;}
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:960px){
+  .header-inner{padding:0 20px;}
+  nav{display:none;}
+  .container{padding:0 20px;}
+  .banner-section{height:auto;}
+  .slide-content{grid-template-columns:1fr;gap:24px;padding:60px 20px 80px;}
+  .slide-right{grid-template-columns:1fr 1fr;}
+  .stats-bar .container{grid-template-columns:repeat(2,1fr);}
+  .stat-col:nth-child(2){border-right:none;}
+  .stat-col:nth-child(3){border-right:1px solid var(--border);}
+  .stat-col:nth-child(3),.stat-col:nth-child(4){padding-top:24px;}
+  .project-row{grid-template-columns:1fr;}
+  .project-visual{min-height:160px;}
+  .project-row.reverse .project-body{order:0;}
+  .project-row.reverse .project-visual{border-left:none;border-top:1px solid var(--border);}
+  .project-visual{border-right:none;border-bottom:1px solid var(--border);}
+  .skills-section{grid-template-columns:1fr 1fr;}
+  .edu-awards-grid{grid-template-columns:1fr;}
+  .connect-grid{grid-template-columns:1fr;gap:40px;}
+  .timeline-item{grid-template-columns:1fr;gap:0;}
+  .tl-divider-col{display:none;}
+  .tl-body{padding-left:0;padding-top:12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">AT</div>
+      <div class="logo-text">
+        <span class="logo-name">Abhishek Tiwari</span>
+        <span class="logo-role">Associate Product Manager</span>
+      </div>
+    </a>
+    <nav id="main-nav">
+      <a href="#about" class="active">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Awards</a>
+      <a href="#connect" class="header-cta">Connect</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════ BANNER CAROUSEL ═══════ -->
+<section class="banner-section">
+  <button class="banner-arrow prev" id="bannerPrev">&#8592;</button>
+  <button class="banner-arrow next" id="bannerNext">&#8594;</button>
+
+  <div class="banner-track" id="bannerTrack">
+
+    <!-- SLIDE 1 — Hero / Intro -->
+    <div class="banner-slide">
+      <div class="slide-bg-pattern"></div>
+      <div class="slide-grid-lines"></div>
+      <div class="slide-content">
+        <div class="slide-left">
+          <div class="slide-tag"><span class="dot"></span> Open to Opportunities</div>
+          <h1 class="slide-headline">Product Manager.<br>Building <em>AI-Powered</em><br>Growth Engines.</h1>
+          <p class="slide-sub">1.5+ years at The Sleep Company — owning CRM, WhatsApp communications, and D2C e-commerce end-to-end. B.E. Computer Science (AI/ML), University of Mumbai.</p>
+          <div class="slide-actions">
+            <a href="#work" class="btn-primary">View My Work</a>
+            <a href="#connect" class="btn-outline">Get in Touch</a>
+          </div>
+        </div>
+        <div class="slide-right">
+          <div class="metric-card">
+            <div class="metric-val">80<span>%</span></div>
+            <div class="metric-label">Lead Conversion</div>
+            <div class="metric-sub">Up from 63%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">91<span>%</span></div>
+            <div class="metric-label">Delivery Rate</div>
+            <div class="metric-sub">Up from 52%</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">₹48<span>L</span></div>
+            <div class="metric-label">Annual Savings</div>
+            <div class="metric-sub">CRM Re-architecture</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-val">72<span>%</span></div>
+            <div class="metric-label">Attribution Fix</div>
+            <div class="metric-sub">Marketplace Revenue</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 — About -->
+    <div class="banner-slide">
+      <div class="slide-bg-pattern"></div>
+      <div class="slide-grid-lines"></div>
+      <div class="slide-content">
+        <div class="slide-left">
+          <div class="slide-tag"><span class="dot"></span> Who I Am</div>
+          <h2 class="slide-headline">PM with a<br><em>Technical Edge.</em></h2>
+          <p class="slide-sub">Computer Science + AI/ML background means I speak fluently to both engineers and stakeholders. From RAG systems and LLMs to PRD writing and sprint planning — I bridge the gap.</p>
+          <div class="slide-actions">
+            <a href="#about" class="btn-primary">More About Me</a>
+            <a href="https://linkedin.com/in/abhishek-v-tiwari" target="_blank" class="btn-outline">LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="slide-right" style="grid-template-columns:1fr;">
+          <div class="slide-story-blocks">
+            <div class="story-block">
+              <span class="story-icon">🏢</span>
+              <div class="story-text">
+                <h4>The Sleep Company — APM</h4>
+                <p>Owning CRM, WhatsApp stack, and D2C e-commerce. Dec 2024 – Present.</p>
+              </div>
+            </div>
+            <div class="story-block">
+              <span class="story-icon">🚀</span>
+              <div class="story-text">
+                <h4>ScatProjects.io — Co-Founder</h4>
+                <p>SaaS engineering marketplace. 50+ projects across 30+ colleges in Mumbai.</p>
+              </div>
+            </div>
+            <div class="story-block">
+              <span class="story-icon">🎓</span>
+              <div class="story-text">
+                <h4>B.E. CS (AI/ML) — 8.6 CGPA</h4>
+                <p>University of Mumbai. Specialised in LLMs, RAG, Computer Vision, and NLP.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 — Skills -->
+    <div class="banner-slide">
+      <div class="slide-bg-pattern"></div>
+      <div class="slide-grid-lines"></div>
+      <div class="slide-content">
+        <div class="slide-left">
+          <div class="slide-tag"><span class="dot"></span> Core Competencies</div>
+          <h2 class="slide-headline">Full-Stack<br><em>PM Skillset.</em></h2>
+          <p class="slide-sub">From writing tight PRDs and running NPS research, to integrating LLMs and building SQL-powered analytics dashboards — I operate across the full PM spectrum.</p>
+          <div class="slide-actions">
+            <a href="#work" class="btn-primary">See Projects</a>
+          </div>
+        </div>
+        <div class="slide-right" style="grid-template-columns:1fr;">
+          <div class="skills-visual">
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span class="skill-bar-name">Product Strategy & Roadmapping</span><span class="skill-bar-pct">90%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span class="skill-bar-name">CRM & Marketing Automation</span><span class="skill-bar-pct">95%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span class="skill-bar-name">AI / ML Integration (LLMs, RAG, CV)</span><span class="skill-bar-pct">82%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:82%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span class="skill-bar-name">Data & Analytics (SQL, BigQuery)</span><span class="skill-bar-pct">80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-top"><span class="skill-bar-name">Cross-functional Execution</span><span class="skill-bar-pct">88%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /banner-track -->
+
+  <div class="banner-controls">
+    <button class="banner-dot active" data-idx="0"></button>
+    <button class="banner-dot" data-idx="1"></button>
+    <button class="banner-dot" data-idx="2"></button>
+  </div>
+</section>
+
+<!-- ═══════ STATS BAR ═══════ -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stat-col">
+      <div class="stat-num">80<span class="accent">%</span></div>
+      <div class="stat-desc">Lead Conversion</div>
+      <div class="stat-detail">Improved from 63% via lead scoring</div>
+    </div>
+    <div class="stat-col">
+      <div class="stat-num">91<span class="accent">%</span></div>
+      <div class="stat-desc">WhatsApp Delivery Rate</div>
+      <div class="stat-detail">Scaled from 52% via Gupshup</div>
+    </div>
+    <div class="stat-col">
+      <div class="stat-num">₹48<span class="accent">L</span></div>
+      <div class="stat-desc">Annual Cost Saved</div>
+      <div class="stat-detail">CRM workflow re-architecture</div>
+    </div>
+    <div class="stat-col">
+      <div class="stat-num">70<span class="accent">K+</span></div>
+      <div class="stat-desc">Store Visits / Year</div>
+      <div class="stat-detail">Driven by WhatsApp store-finder bot</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section id="about" class="page-section">
+  <div class="container">
+    <div class="section-title-block reveal">
+      <span class="section-eyebrow">01 — About</span>
+      <div class="section-divider"></div>
+      <h2 class="section-h2">Who I Am</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start;">
+      <div class="reveal">
+        <p style="font-size:15px;color:rgba(200,212,232,0.8);line-height:1.8;margin-bottom:18px;">
+          I'm an <strong style="color:#fff;">Associate Product Manager</strong> with a Computer Science (AI/ML) background, currently at <strong style="color:#fff;">The Sleep Company</strong> where I own CRM, WhatsApp communications, and D2C e-commerce end-to-end.
+        </p>
+        <p style="font-size:15px;color:rgba(200,212,232,0.8);line-height:1.8;margin-bottom:18px;">
+          My work spans behavior-based lead scoring, WhatsApp bot architecture, AI integrations using Computer Vision and LLMs, and data-driven funnel analysis. I'm obsessed with the bridge between technical feasibility and measurable business impact.
+        </p>
+        <p style="font-size:15px;color:rgba(200,212,232,0.8);line-height:1.8;">
+          Before joining The Sleep Company, I co-founded <strong style="color:#fff;">ScatProjects.io</strong> — a SaaS engineering project marketplace that served 30+ colleges across Mumbai, delivering 50+ projects in IoT, Blockchain, ML, and full-stack development.
+        </p>
+      </div>
+      <div class="skills-section reveal" style="grid-template-columns:1fr 1fr;display:grid;gap:14px;">
+        <div class="skill-group-card">
+          <div class="sg-label">Product</div>
+          <div class="sg-tags">
+            <span class="sg-tag">PRD Writing</span>
+            <span class="sg-tag">Roadmapping</span>
+            <span class="sg-tag">User Research</span>
+            <span class="sg-tag">NPS</span>
+            <span class="sg-tag">Sprint Planning</span>
+            <span class="sg-tag">A/B Testing</span>
+            <span class="sg-tag">Figma</span>
+            <span class="sg-tag">GTM Strategy</span>
+          </div>
+        </div>
+        <div class="skill-group-card">
+          <div class="sg-label">AI / ML</div>
+          <div class="sg-tags">
+            <span class="sg-tag">LLM Integration</span>
+            <span class="sg-tag">RAG Systems</span>
+            <span class="sg-tag">Prompt Engineering</span>
+            <span class="sg-tag">Computer Vision</span>
+            <span class="sg-tag">NLP</span>
+            <span class="sg-tag">Vector DBs</span>
+            <span class="sg-tag">CNNs</span>
+          </div>
+        </div>
+        <div class="skill-group-card">
+          <div class="sg-label">Technical</div>
+          <div class="sg-tags">
+            <span class="sg-tag">Python</span>
+            <span class="sg-tag">SQL</span>
+            <span class="sg-tag">JavaScript</span>
+            <span class="sg-tag">REST APIs</span>
+            <span class="sg-tag">BigQuery</span>
+            <span class="sg-tag">WhatsApp API</span>
+          </div>
+        </div>
+        <div class="skill-group-card">
+          <div class="sg-label">Tools</div>
+          <div class="sg-tags">
+            <span class="sg-tag">LeadSquared</span>
+            <span class="sg-tag">WebEngage</span>
+            <span class="sg-tag">Gupshup</span>
+            <span class="sg-tag">Tableau</span>
+            <span class="sg-tag">GA4</span>
+            <span class="sg-tag">Postman</span>
+            <span class="sg-tag">EasyEcom</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ EXPERIENCE ═══════ -->
+<section id="experience" class="page-section">
+  <div class="container">
+    <div class="section-title-block reveal">
+      <span class="section-eyebrow">02 — Experience</span>
+      <div class="section-divider"></div>
+      <h2 class="section-h2">Work History</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="tl-meta">
+          <div class="tl-period">Dec 2024 – Present</div>
+          <div class="tl-company">The Sleep Company</div>
+          <div class="tl-location">Mumbai, India</div>
+        </div>
+        <div class="tl-divider-col"></div>
+        <div class="tl-body">
+          <div class="tl-role">Associate Product Manager</div>
+          <ul class="tl-bullets">
+            <li>Shipped <em>Converse</em>, a CRM-integrated WhatsApp dashboard; conducted NPS and user research with 200+ store managers; improved lead-to-conversion from 63% to 80% via behavior-based lead scoring.</li>
+            <li>Re-architected LeadSquared automation workflows cutting monthly executions from 7Cr to 4Cr; saved ₹48L annually via distributed lead routing and CRM enhancements.</li>
+            <li>Owned WhatsApp stack via Gupshup; scaled delivery rates from 52% to 91%; built store finder and order rescheduling bots driving 70K+ store visits and 28K+ purchases annually.</li>
+            <li>Drove WebEngage enhancements via agile sprint planning; launched repeat visit journeys boosting unknown-to-known customer identification by 56%.</li>
+            <li>Resolved OMS attribution gap misrecording Tata CliQ and Pepperfry orders as Shopify, improving marketplace revenue attribution by 72%.</li>
+            <li>Scoped Tribe V2 AI integration for ad creative evaluation via brain-region heatmaps (Computer Vision); built SaaS tools automating manual workflows.</li>
+            <li>Built automated daily sales WhatsApp nudge using BigQuery and SQL; conducted RP/RT funnel analysis identifying warranty claim patterns across 3 years of data.</li>
+          </ul>
+          <div class="tl-badges">
+            <span class="badge">+17pp Lead Conv.</span>
+            <span class="badge">+39pp Delivery Rate</span>
+            <span class="badge">₹48L Saved</span>
+            <span class="badge">70K+ Store Visits</span>
+            <span class="badge">28K+ Purchases</span>
+            <span class="badge">+56% ID Rate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-meta">
+          <div class="tl-period">Nov 2023 – Nov 2024</div>
+          <div class="tl-company">ScatProjects.io</div>
+          <div class="tl-location">Mumbai, India</div>
+        </div>
+        <div class="tl-divider-col"></div>
+        <div class="tl-body">
+          <div class="tl-role">Co-Founder</div>
+          <ul class="tl-bullets">
+            <li>Founded SaaS engineering project marketplace; served 30+ colleges across Mumbai delivering IoT, Blockchain, ML, and full-stack solutions to final year students.</li>
+            <li>Managed end-to-end delivery of 50+ projects across Blockchain, ML, Web and Mobile; handled client scoping, requirements, and delivery timelines.</li>
+          </ul>
+          <div class="tl-badges">
+            <span class="badge">50+ Projects</span>
+            <span class="badge">30+ Colleges</span>
+            <span class="badge">SaaS Marketplace</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ WORK / PROJECTS ═══════ -->
+<section id="work" class="page-section">
+  <div class="container">
+    <div class="section-title-block reveal">
+      <span class="section-eyebrow">03 — Work</span>
+      <div class="section-divider"></div>
+      <h2 class="section-h2">Latest Work</h2>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Project 1 — Converse -->
+      <div class="project-row reveal">
+        <div class="project-visual pv-bg-1">
+          <div class="pv-content">
+            <span class="pv-icon">💬</span>
+            <div class="pv-label">CRM · WhatsApp</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="proj-category">The Sleep Company · Internal Product</div>
+          <h3 class="proj-title">Converse — WhatsApp CRM Dashboard</h3>
+          <p class="proj-desc">A CRM-integrated WhatsApp dashboard built for 200+ store managers, combining behavior-based lead scoring with unified conversation management. Grounded in 200+ NPS interviews and user research sessions.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><span class="proj-metric-val"><span class="up">80%</span></span><span class="proj-metric-label">Lead Conv. (from 63%)</span></div>
+            <div class="proj-metric"><span class="proj-metric-val">200+</span><span class="proj-metric-label">Store Managers</span></div>
+            <div class="proj-metric"><span class="proj-metric-val"><span class="up">56%</span></span><span class="proj-metric-label">ID Rate Uplift</span></div>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">LeadSquared</span>
+            <span class="proj-tag">Gupshup</span>
+            <span class="proj-tag">WhatsApp API</span>
+            <span class="proj-tag">CRM</span>
+            <span class="proj-tag">Lead Scoring</span>
+            <span class="proj-tag">NPS Research</span>
+          </div>
+          <a href="#" class="proj-link muted">Internal Product · Link Coming Soon →</a>
+        </div>
+      </div>
+
+      <!-- Project 2 — WhatsApp Bots (reversed) -->
+      <div class="project-row reverse reveal">
+        <div class="project-body">
+          <div class="proj-category">The Sleep Company · Automation</div>
+          <h3 class="proj-title">Store Finder & Order Rescheduling Bots</h3>
+          <p class="proj-desc">End-to-end WhatsApp chatbots on Gupshup enabling customers to locate stores and reschedule deliveries without any human intervention. Scaled the entire WhatsApp delivery infrastructure from 52% to 91% delivery rate.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><span class="proj-metric-val"><span class="up">91%</span></span><span class="proj-metric-label">Delivery Rate</span></div>
+            <div class="proj-metric"><span class="proj-metric-val">70K+</span><span class="proj-metric-label">Store Visits / yr</span></div>
+            <div class="proj-metric"><span class="proj-metric-val">28K+</span><span class="proj-metric-label">Purchases / yr</span></div>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">Gupshup</span>
+            <span class="proj-tag">WhatsApp Business API</span>
+            <span class="proj-tag">Chatbot Dev</span>
+            <span class="proj-tag">Automation</span>
+          </div>
+          <a href="#" class="proj-link muted">Internal Product · Link Coming Soon →</a>
+        </div>
+        <div class="project-visual pv-bg-2">
+          <div class="pv-content">
+            <span class="pv-icon">🤖</span>
+            <div class="pv-label">Chatbots · Automation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 — Tribe V2 AI -->
+      <div class="project-row reveal">
+        <div class="project-visual pv-bg-3">
+          <div class="pv-content">
+            <span class="pv-icon">🧠</span>
+            <div class="pv-label">AI · Computer Vision</div>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="proj-category">The Sleep Company · AI Integration</div>
+          <h3 class="proj-title">Tribe V2 — AI Ad Creative Evaluator</h3>
+          <p class="proj-desc">Scoped and integrated Computer Vision into the Tribe V2 platform for evaluating advertising creatives via brain-region attention heatmaps. Replaced a fully manual review workflow, reducing operational overhead significantly for the marketing team.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><span class="proj-metric-val">CV</span><span class="proj-metric-label">Heatmap Analysis</span></div>
+            <div class="proj-metric"><span class="proj-metric-val">Auto</span><span class="proj-metric-label">Manual → Automated</span></div>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">Computer Vision</span>
+            <span class="proj-tag">Tribe V2</span>
+            <span class="proj-tag">AI Integration</span>
+            <span class="proj-tag">SaaS</span>
+            <span class="proj-tag">Ad Tech</span>
+          </div>
+          <a href="#" class="proj-link muted">Internal Tool · Link Coming Soon →</a>
+        </div>
+      </div>
+
+      <!-- Project 4 — Skin Cancer CNN (reversed) -->
+      <div class="project-row reverse reveal">
+        <div class="project-body">
+          <div class="proj-category">Personal Project · ML Research</div>
+          <h3 class="proj-title">Skin Cancer Detection — CNN Diagnostic System</h3>
+          <p class="proj-desc">Multi-class convolutional neural network trained on 100K+ dermoscopic images across 4 cancer types. Achieved 92% classification accuracy — built as a potential assistive diagnostic tool for early detection.</p>
+          <div class="proj-metrics">
+            <div class="proj-metric"><span class="proj-metric-val"><span class="up">92%</span></span><span class="proj-metric-label">Accuracy</span></div>
+            <div class="proj-metric"><span class="proj-metric-val">100K+</span><span class="proj-metric-label">Training Images</span></div>
+            <div class="proj-metric"><span class="proj-metric-val">4</span><span class="proj-metric-label">Cancer Types</span></div>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">TensorFlow</span>
+            <span class="proj-tag">OpenCV</span>
+            <span class="proj-tag">Keras</span>
+            <span class="proj-tag">CNN</span>
+            <span class="proj-tag">Python</span>
+          </div>
+          <a href="https://github.com/abhishek-v-tiwari" target="_blank" class="proj-link">View on GitHub →</a>
+        </div>
+        <div class="project-visual pv-bg-4">
+          <div class="pv-content">
+            <span class="pv-icon">🔬</span>
+            <div class="pv-label">ML · Healthcare</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ EDUCATION & AWARDS ═══════ -->
+<section id="education" class="page-section">
+  <div class="container">
+    <div class="section-title-block reveal">
+      <span class="section-eyebrow">04 — Education</span>
+      <div class="section-divider"></div>
+      <h2 class="section-h2">Education & Awards</h2>
+    </div>
+    <div class="edu-awards-grid">
+      <div class="edu-card reveal">
+        <div class="edu-badge-row">
+          <div class="edu-icon-box">🎓</div>
+          <div>
+            <div class="edu-type">Bachelor of Engineering</div>
+          </div>
+        </div>
+        <div class="edu-degree">Computer Science<br>(Artificial Intelligence & ML)</div>
+        <div class="edu-uni">University of Mumbai · Mumbai, India · Jun 2020 – Jun 2024</div>
+        <div class="edu-stats-grid">
+          <div class="edu-stat-cell">
+            <div class="edu-stat-val">8.6<span class="accent">/10</span></div>
+            <div class="edu-stat-key">CGPA</div>
+          </div>
+          <div class="edu-stat-cell">
+            <div class="edu-stat-val"><span class="accent">AI/ML</span></div>
+            <div class="edu-stat-key">Specialisation</div>
+          </div>
+          <div class="edu-stat-cell">
+            <div class="edu-stat-val">2024</div>
+            <div class="edu-stat-key">IQAC Student Nominee</div>
+          </div>
+          <div class="edu-stat-cell">
+            <div class="edu-stat-val">500<span class="accent">+</span></div>
+            <div class="edu-stat-key">Hackathon Participants Led</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="awards" class="awards-stack reveal">
+        <div class="award-row">
+          <div class="award-icon-box">⭐</div>
+          <div class="award-info">
+            <div class="award-title">Star Performer of the Month</div>
+            <div class="award-org">The Sleep Company · 2024</div>
+            <p class="award-desc">Recognised for exceptional performance and consistent delivery in a high-growth D2C environment.</p>
+          </div>
+        </div>
+        <div class="award-row">
+          <div class="award-icon-box">🏆</div>
+          <div class="award-info">
+            <div class="award-title">The Game Changer Award</div>
+            <div class="award-org">The Sleep Company · 2025</div>
+            <p class="award-desc">Awarded for impactful initiatives driving measurable business outcomes beyond the defined role.</p>
+          </div>
+        </div>
+        <div class="award-row">
+          <div class="award-icon-box">🎓</div>
+          <div class="award-info">
+            <div class="award-title">Student IQAC Nominee</div>
+            <div class="award-org">University of Mumbai · 2024</div>
+            <p class="award-desc">Elected among 2000+ students as official student voice for institutional quality reviews.</p>
+          </div>
+        </div>
+        <div class="award-row">
+          <div class="award-icon-box">⚡</div>
+          <div class="award-info">
+            <div class="award-title">Head Volunteer — ComICs 2023</div>
+            <div class="award-org">Annual Hackathon & Gamethon</div>
+            <p class="award-desc">Led 500+ participants across two concurrent flagship college events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CONNECT ═══════ -->
+<section id="connect" class="page-section">
+  <div class="container">
+    <div class="section-title-block reveal">
+      <span class="section-eyebrow">05 — Connect</span>
+      <div class="section-divider"></div>
+      <h2 class="section-h2">Let's Connect</h2>
+    </div>
+    <div class="connect-grid">
+      <div class="connect-left reveal">
+        <h3 class="connect-headline">Have a project or<br>opportunity in mind?<br><span>Let's talk.</span></h3>
+        <p class="connect-sub">Whether it's a new product, a PM role, or a conversation about AI-driven growth — I'm always open to connecting.</p>
+        <div class="social-rows">
+          <a href="mailto:avt.tiwari12@gmail.com" class="social-row">
+            <div class="social-row-icon">✉️</div>
+            <div class="social-row-text">
+              <span class="social-row-name">Email</span>
+              <span class="social-row-val">avt.tiwari12@gmail.com</span>
+            </div>
+            <span class="social-row-arr">→</span>
+          </a>
+          <a href="https://linkedin.com/in/abhishek-v-tiwari" target="_blank" class="social-row">
+            <div class="social-row-icon">💼</div>
+            <div class="social-row-text">
+              <span class="social-row-name">LinkedIn</span>
+              <span class="social-row-val">linkedin.com/in/abhishek-v-tiwari</span>
+            </div>
+            <span class="social-row-arr">→</span>
+          </a>
+          <a href="https://github.com/abhishek-v-tiwari" target="_blank" class="social-row">
+            <div class="social-row-icon">🐙</div>
+            <div class="social-row-text">
+              <span class="social-row-name">GitHub</span>
+              <span class="social-row-val">github.com/abhishek-v-tiwari</span>
+            </div>
+            <span class="social-row-arr">→</span>
+          </a>
+          <a href="tel:+919819833605" class="social-row">
+            <div class="social-row-icon">📱</div>
+            <div class="social-row-text">
+              <span class="social-row-name">Phone</span>
+              <span class="social-row-val">+91 98198 33605</span>
+            </div>
+            <span class="social-row-arr">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <div class="form-title">Send a Message</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="John" />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Doe" />
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" type="email" placeholder="john@company.com" />
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Subject</label>
+            <input class="form-input" type="text" placeholder="Opportunity / Collaboration / Chat" />
+          </div>
+          <div class="form-field full">
+            <label class="form-label">Message</label>
+            <textarea class="form-input" placeholder="Tell me about your project, role, or idea…"></textarea>
+          </div>
+          <button class="submit-btn" onclick="submitForm(this)">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="container">
+    <div class="footer-l">Abhishek Tiwari <span>· Associate Product Manager · Mumbai, India</span></div>
+    <div class="footer-r">
+      <a href="mailto:avt.tiwari12@gmail.com">avt.tiwari12@gmail.com</a> &nbsp;·&nbsp;
+      <a href="https://linkedin.com/in/abhishek-v-tiwari" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+      <a href="https://github.com/abhishek-v-tiwari" target="_blank">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── BANNER CAROUSEL ──────────────────────────────
+const track   = document.getElementById('bannerTrack');
+const dots    = document.querySelectorAll('.banner-dot');
+const prevBtn = document.getElementById('bannerPrev');
+const nextBtn = document.getElementById('bannerNext');
+let current = 0, total = 3, autoTimer;
+
+function goTo(idx){
+  current = (idx + total) % total;
+  track.style.transform = `translateX(-${current * 33.333}%)`;
+  dots.forEach((d,i)=>d.classList.toggle('active', i===current));
+}
+function startAuto(){ autoTimer = setInterval(()=>goTo(current+1), 5000); }
+function resetAuto(){ clearInterval(autoTimer); startAuto(); }
+
+prevBtn.addEventListener('click',()=>{ goTo(current-1); resetAuto(); });
+nextBtn.addEventListener('click',()=>{ goTo(current+1); resetAuto(); });
+dots.forEach(d=>d.addEventListener('click',()=>{ goTo(+d.dataset.idx); resetAuto(); }));
+startAuto();
+
+// ── NAV ACTIVE STATE ON SCROLL ───────────────────
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+const sections = document.querySelectorAll('section[id],.stats-bar');
+window.addEventListener('scroll',()=>{
+  let pos = window.scrollY + 100;
+  sections.forEach(sec=>{
+    if(!sec.id) return;
+    if(pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight){
+      navLinks.forEach(a=>{
+        a.classList.toggle('active', a.getAttribute('href')==='#'+sec.id);
+      });
+    }
+  });
+},{ passive:true });
+
+// ── SCROLL REVEAL ────────────────────────────────
+const reveals = document.querySelectorAll('.reveal');
+const revObs  = new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('in'), i*70);
+      revObs.unobserve(e.target);
+    }
+  });
+},{ threshold:0.08, rootMargin:'0px 0px -30px 0px' });
+reveals.forEach(el=>revObs.observe(el));
+
+// ── FORM SUBMIT ──────────────────────────────────
+function submitForm(btn){
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = '#0d9488';
+  btn.disabled = true;
+  setTimeout(()=>{
+    btn.textContent = 'Send Message →';
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3500);
+}
+</script>
+</body>
+</html>
